@@ -1,0 +1,12 @@
+.about {
+  padding: 1rem;
+  background-color: rgb(40, 40, 40);
+  margin: 2rem auto;
+  width: 29rem;
+  max-width: 95%;
+  text-align: center;
+}
+
+.about p {
+  font-size: larger;
+}

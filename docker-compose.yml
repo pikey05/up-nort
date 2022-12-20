@@ -1,0 +1,13 @@
+version: '3'
+services:
+  up-nort:
+    build:
+      context: .
+    ports:
+      - "3005:3000"
+    container_name: up-nort
+    # stdin_open: true
+    volumes:
+      - ./:/opt/app
+    # entrypoint: /bin/sh
+    command: "npm start"
