@@ -5,6 +5,7 @@ import ContactItem from './ContactItem';
 import { BsHouseDoor, BsTelephone, BsEnvelope, BsLink } from 'react-icons/bs';
 import { imageStyle } from './ContactData';
 import { IconContext } from 'react-icons';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import styles from './Contact.module.css';
 
 const Contact = () => {
@@ -12,12 +13,29 @@ const Contact = () => {
   const [openTelephone, setOpenTelephone] = useState(false);
   const [openEmail, setOpenEmail] = useState(false);
   const [openRental, setOpenRental] = useState(false);
+  const largeWindow = useMediaQuery('(min-width:600px)');
+
+  let mapWidth = "530"
+
+  if (!largeWindow) {
+    mapWidth = "250"
+  }
 
   const contactData = [
     {
       image: <BsHouseDoor onClick={() => setOpenAddress(true)} />,
       href: 'https://goo.gl/maps/wyACQeG99EAzdNsK6',
-      data: '2744 Hwy 17, Phelps, WI, United States, 54554',
+      data: (
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2769.160228442116!2d-89.1158729!3d46.0479022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4d543cc95ebf9023%3A0xe11fce467909eb39!2s2744%20State%20Rd%2017%2C%20Phelps%2C%20WI%2054554!5e0!3m2!1sen!2sus!4v1671651166957!5m2!1sen!2sus"
+          width={mapWidth}
+          height="350"
+          style={{ border: '0' }}
+          allowFullScreen=""
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
+      ),
       blank: true,
       title: 'Address',
       open: openAddress,
