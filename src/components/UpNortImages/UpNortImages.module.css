@@ -5,3 +5,7 @@
   width: 765px;
   max-width: 110%;
 }
+
+.upNort img:hover {
+  cursor: pointer;
+}
