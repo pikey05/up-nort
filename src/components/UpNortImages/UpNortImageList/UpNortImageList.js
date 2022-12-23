@@ -8,16 +8,12 @@ const UpNortImageList = ({ largeWindow, images, onImageClick }) => {
   let scrollBoxWidth = 700;
   let scrollBoxHeight = 550;
   let rowHeight = 164;
-  let imgWidth = 164;
-  let imgHeight = 164;
 
   if (!largeWindow) {
     imgCols = 2;
     scrollBoxWidth = 350;
     scrollBoxHeight = 450;
     rowHeight = 164;
-    imgWidth = 182;
-    imgHeight = 164;
   }
 
   return (
@@ -30,10 +26,11 @@ const UpNortImageList = ({ largeWindow, images, onImageClick }) => {
       {images.map((img, index) => (
         <ImageListItem key={img.label}>
           <img
-            src={`${img.imgPath}?w=${imgWidth}&h=${imgHeight}&fit=crop&auto=format`}
-            srcSet={`${img.imgPath}?w=${imgWidth}&h=${imgHeight}&fit=crop&auto=format&dpr=2 2x`}
+            src={img.imgPath}
+            srcSet={img.imgPath}
             alt={img.label}
             loading="lazy"
+            style={{ cursor: "pointer" }}
             onClick={() => {
               onImageClick(index);
             }}
