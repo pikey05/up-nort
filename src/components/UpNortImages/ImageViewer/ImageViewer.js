@@ -20,7 +20,7 @@ const ImageViewer = ({ images, selectedImage, largeWindow, onViewerClose }) => {
   // Set first picture to the one selected
   const [activeStep, setActiveStep] = useState(selectedImage);
   const maxSteps = images.length;
-  let closePadding = 35;
+  let closePadding = 39;
 
   const darkMode = createTheme({
     palette: {
