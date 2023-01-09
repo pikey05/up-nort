@@ -8,7 +8,8 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {
   MdOutlineHome,
   MdInfoOutline,
-  MdOutlineContactPage
+  MdOutlineContactPage,
+  MdMap
 } from 'react-icons/md';
 import NavContext from '../../store/nav-context';
 
@@ -21,7 +22,8 @@ const SiteNavigator = () => {
   const actions = [
     { icon: <MdOutlineHome />, name: 'Home' },
     { icon: <MdInfoOutline />, name: 'About' },
-    { icon: <MdOutlineContactPage />, name: 'Contact' }
+    { icon: <MdMap />, name: 'Map' },
+    { icon: <MdOutlineContactPage />, name: 'Contact' },
   ];
 
   const theme = createTheme({

@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 
 const NavContext = React.createContext({
-  currentNavItem: 'home',
+  currentNavItem: 'Home',
   onSelectNavItem: () => {}
 });
 

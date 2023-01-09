@@ -75,7 +75,8 @@ const ImageViewer = ({ images, selectedImage, largeWindow, onViewerClose }) => {
                 alignItems: 'center',
                 height: 50,
                 pl: 2,
-                bgcolor: 'background.default'
+                bgcolor: 'background.default',
+                borderTopLeftRadius: '12px'
               }}
             >
               {/* <Typography color="#94c973">
@@ -92,7 +93,8 @@ const ImageViewer = ({ images, selectedImage, largeWindow, onViewerClose }) => {
                 alignItems: 'center',
                 height: 50,
                 pl: closePadding,
-                bgcolor: 'background.default'
+                bgcolor: 'background.default',
+                borderTopRightRadius: '12px'
               }}
             >
               <Button onClick={onViewerClose} size="small">
@@ -121,6 +123,10 @@ const ImageViewer = ({ images, selectedImage, largeWindow, onViewerClose }) => {
           ))}
         </AutoPlaySwipeableViews>
         <MobileStepper
+          sx={{
+            borderBottomRightRadius: '12px',
+            borderBottomLeftRadius: '12px'
+          }}
           steps={maxSteps}
           position="static"
           activeStep={activeStep}

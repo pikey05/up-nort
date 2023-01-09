@@ -1,20 +1,41 @@
 import React from 'react';
 
-import Card from '../UI/Card';
-import styles from './About.module.css';
+import CenterContent from '../UI/CenterContent';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 const About = () => {
+  const largeScreen = useMediaQuery('(min-width:600px)');
+  let styleProps = {
+    maxWidth: '500px',
+    paddingLeft: '20px',
+    paddingRight: '20px'
+  };
+
+  if (!largeScreen) {
+    styleProps = {
+      maxWidth: '300px',
+      paddingLeft: '20px',
+      paddingRight: '20px'
+    };
+  }
+
   return (
-    <Card className={styles.about}>
+    <CenterContent sxProps={styleProps}>
       <p>
-        This Beautiful year round short term vacation rental is located just
-        North of Eagle River, WI. Summer weekly rentals and 3 day minimum the
-        rest of the year. The house will sleep 10 with 3 kings, one queen and a
-        pull out couch. Large kitchen for prep and dining. Comfy family space.
-        Boat, fish or snowmobile on North Twin lake. Walking, bike and ATV
-        trails close by. Follow us on our Facebook page "Up Nort' Retreat".
+        This beautiful year-round, short-term vacation rental is located just
+        north of Eagle River, WI with dock access to North Twin Lake. The home
+        sleeps 10 with three kings, one queen, and a pull-out couch. It features
+        a large, gourmet kitchen for preparation, dining, and entertaining. The
+        family room provides a cozy, comfortable gathering space with
+        picturesque views. The home is ideally located for a range of
+        recreational activities. North Twin Lake offers a variety of winter and
+        summer activies, including boating, swimming, fishing, and snowmobiling.
+        Walking, bike, and ATV trails are close by for additional recreational
+        options. Rental time is weekly in the summer and a three day minimum the
+        remainder of the year. Follow us on our Facebook page "Up Nort'
+        Retreat".
       </p>
-    </Card>
+    </CenterContent>
   );
 };
 

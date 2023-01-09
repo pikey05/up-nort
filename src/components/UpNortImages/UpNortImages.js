@@ -3,17 +3,14 @@ import React, { useState } from 'react';
 import UpNortImageList from './UpNortImageList/UpNortImageList';
 import ImageViewer from './ImageViewer/ImageViewer';
 import imageList from './ImportImages';
+import CenterContent from '../UI/CenterContent';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Unstable_Grid2';
 
 const UpNortImages = () => {
   const [showCollage, setShowCollage] = useState(true);
   const [selectedImage, setSelectedImage] = useState();
   const largeWindow = useMediaQuery('(min-width:600px)');
   let paperStyles = {
-    backgroundColor: 'rgb(40, 40, 40)',
     paddingLeft: '13px',
     paddingRight: '13px'
   };
@@ -42,42 +39,27 @@ const UpNortImages = () => {
 
   if (!showCollage) {
     paperStyles = {
-      backgroundColor: 'rgb(40, 40, 40)',
       padding: '13px'
     };
   }
-
   return (
-    <Grid
-      container
-      spacing={0}
-      direction="column"
-      alignItems="center"
-      justifyContent="center"
-      // style={{ minHeight: '100vh' }}
-    >
-      <Grid>
-        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <Paper sx={paperStyles} elevation={3}>
-            {showCollage && (
-              <UpNortImageList
-                largeWindow={largeWindow}
-                images={imageList}
-                onImageClick={imageClickHandler}
-              />
-            )}
-            {!showCollage && (
-              <ImageViewer
-                images={imageList}
-                selectedImage={selectedImage}
-                largeWindow={largeWindow}
-                onViewerClose={closeViewerHandler}
-              />
-            )}
-          </Paper>
-        </Box>
-      </Grid>
-    </Grid>
+    <CenterContent sxProps={paperStyles}>
+      {showCollage && (
+        <UpNortImageList
+          largeWindow={largeWindow}
+          images={imageList}
+          onImageClick={imageClickHandler}
+        />
+      )}
+      {!showCollage && (
+        <ImageViewer
+          images={imageList}
+          selectedImage={selectedImage}
+          largeWindow={largeWindow}
+          onViewerClose={closeViewerHandler}
+        />
+      )}
+    </CenterContent>
   );
 };
 export default UpNortImages;

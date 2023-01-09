@@ -5,6 +5,7 @@ import Contact from './components/Contact/Contact';
 import UpNortImages from './components/UpNortImages/UpNortImages';
 import Logo from './components/Logo/Logo';
 import SiteNavigator from './components/SiteNavigator/SiteNavigator';
+import Map from './components/Map/Map'
 import NavContext from './store/nav-context';
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
       <Logo />
       {navCtx.currentNavItem === 'Home' && <UpNortImages />}
       {navCtx.currentNavItem === 'About' && <About />}
+      {navCtx.currentNavItem === 'Map' && <Map />}
       {navCtx.currentNavItem === 'Contact' && <Contact />}
     </React.Fragment>
   );

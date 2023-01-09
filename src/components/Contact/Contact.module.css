@@ -1,21 +1,43 @@
-.contact {
-  padding: 1rem;
-  background-color: rgb(40, 40, 40);
-  margin: 2rem auto;
-  width: 21rem;
-  max-width: 95%;
+a {
+  padding-left: 5px;
 }
 
 a:link {
   color: #94c973;
   background-color: transparent;
   text-decoration: none;
-  font-weight: bolder;
 }
 
 a:visited {
   color: #94c973;
   background-color: transparent;
   text-decoration: none;
-  font-weight: bolder; 
+}
+
+h2 {
+  padding-bottom: 10px;
+  border-bottom: 1px solid;
+}
+
+h3 {
+  padding-bottom: 10px;
+  border-bottom: 1px solid;
+}
+
+.contactItem {
+  display: inline-block;
+  padding: 5px;
+}
+
+h4, h5 {
+  margin: 2px;
+}
+
+.lastItem {
+  padding-bottom: 18px;
+  border-bottom: 1px solid;
+}
+
+.spacer {
+  margin: 28px;
 }
