@@ -23,13 +23,16 @@ const SiteNavigator = () => {
     { icon: <MdOutlineHome />, name: 'Home' },
     { icon: <MdInfoOutline />, name: 'About' },
     { icon: <MdMap />, name: 'Map' },
-    { icon: <MdOutlineContactPage />, name: 'Contact' },
+    { icon: <MdOutlineContactPage />, name: 'Contact' }
   ];
 
   const theme = createTheme({
     palette: {
       primary: {
         main: '#917e60'
+      },
+      secondary: {
+        main: '#2e3846'
       },
       mode: 'dark'
     }
@@ -40,14 +43,14 @@ const SiteNavigator = () => {
       <ThemeProvider theme={theme}>
         <SpeedDial
           ariaLabel="site navigation"
-          sx={{ position: 'absolute', top: 16, right: 16 }}
+          sx={{ position: 'absolute', top: 16, left: 16 }}
           FabProps={{
             sx: {
               bgcolor: 'primary',
               color: '#2e3846'
             }
           }}
-          direction="down"
+          direction="right"
           icon={<SpeedDialIcon />}
           onClose={handleClose}
           onOpen={handleOpen}
@@ -57,11 +60,15 @@ const SiteNavigator = () => {
             <SpeedDialAction
               key={action.name}
               icon={action.icon}
-              tooltipTitle={action.name}
-              tooltipOpen
+              FabProps={{
+                sx: {
+                  bgcolor: 'rgb(40, 40, 40)',
+                  color: '#917e60'
+                }
+              }}
               onClick={() => {
-                navCtx.onSelectNavItem(action.name)
-                handleClose()
+                navCtx.onSelectNavItem(action.name);
+                handleClose();
               }}
             />
           ))}
